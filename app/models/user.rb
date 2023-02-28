@@ -5,4 +5,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :interests
+  # methods we get: user.interests, user.interests << ()
+  has_many :categories, through: :interests
+  # user.categories
+  # To inspect: User.has_many(:categories, through: :interests)
 end
