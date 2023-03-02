@@ -1,7 +1,9 @@
-<div class="container">
+<div class="window">
   <h2><%= user.first_name %></h2>
   <p><%= user.dob %></p>
+  <p>My interest : </p>
   <p><% user.categories.each do |c| %></p>
   <p><%= c.name %></p>
   <p><% end %></p>
+  <%= link_to "Want to hang out?", user_path(user) %>
 </div>
