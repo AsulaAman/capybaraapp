@@ -1,2 +1,9 @@
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
+<%= form_for @category do |f| %>
+  <%= select2_category_dropdown(f, :category, ['Fitness', 'Entertainment', 'Outdoors', 'Music', 'Theatre', 'Arts & Crafts']) %>
+<% end %>
+
+<!-- Include the Select2 library and your JavaScript code -->
+<%= javascript_include_tag 'select2' %>
+<%= javascript_include_tag 'dropdown' %>
