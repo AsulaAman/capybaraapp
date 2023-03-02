@@ -1,0 +1,7 @@
+<div class="container">
+  <h2><%= user.first_name %></h2>
+  <p><%= user.dob %></p>
+  <p><% user.categories.each do |c| %></p>
+  <p><%= c.name %></p>
+  <p><% end %></p>
+</div>
