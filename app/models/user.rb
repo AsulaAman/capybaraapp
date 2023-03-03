@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  attr_accessor :dob
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -8,10 +10,4 @@ class User < ApplicationRecord
   has_many :categories, through: :interests
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
-
-  def age
-    # age = Date.today.year - @user.dob
-    # age -= 1 if Date.today < @user.dob + age.years
-    # puts age
-  end
 end
