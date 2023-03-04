@@ -10,4 +10,5 @@ class User < ApplicationRecord
   has_many :categories, through: :interests
   geocoded_by :address
   after_validation :geocode, if: :will_save_change_to_address?
+  has_many :messages
 end

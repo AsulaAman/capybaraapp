@@ -22,6 +22,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+
+  # Showing users on the map
   end
 
   def edit
