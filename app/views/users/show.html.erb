@@ -1,1 +1,17 @@
-<h1>This is the show page of user</h1>
+<div class="container mt-3">
+<h1>Helen C, 29</h1>
+  <div class="card" style="width:400px">
+    <img class="card-img-top" src="https://kbimages1-a.akamaihd.net/248efc87-e61c-4479-8ee1-64f25b1d33ba/1200/1200/False/you-re-a-good-friend-capybara.jpg" class="rounded-circle" alt="profile photo" style="width:100%">
+    <div class="card-body">
+      <p class="card-text">
+      <%= @user.first_name %>
+      <%= @user.last_name %>
+      <%= @user.address %>
+      <%= @user.bio %>
+      <%= @user.gender %>
+      <%= @user.dob %></p>
+    </div>
+
+    <div class="card" style="width:400px">
+    </div>
+  </div>

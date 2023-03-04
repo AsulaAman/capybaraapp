@@ -4,7 +4,11 @@ class UsersController < ApplicationController
   end
 
   def show
-  # Showing users on the map
+    @user = User.find(params[:id])
+
+
+
+
   end
 
   def edit
