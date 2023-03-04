@@ -3,7 +3,11 @@
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 >
   <h1>#<%= @chatroom.name %></h1>
-
+<div class="messages" data-chatroom-subscription-target="messages">
+  <% @chatroom.messages.each do |message| %>
+    <%= render "messages/message", message: message %>
+  <% end %>
+</div>
   <div class="messages" data-chatroom-subscription-target="messages">
   <h1>Chat</h1>
   <%= simple_form_for [@chatroom, @message],
