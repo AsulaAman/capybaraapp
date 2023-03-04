@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ToggleFavoriteController from "./toggle_favorite_controller"
+application.register("toggle-favorite", ToggleFavoriteController)

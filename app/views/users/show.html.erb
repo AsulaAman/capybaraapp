@@ -1,1 +1,7 @@
-<h1>This is the show page of user</h1>
+<div class="show-profile">
+  <h1><%= @user.first_name %></h1>
+</div>
+<div class="like-icon mx-2" data-controller="toggle-favorite" data-action="click->toggle-favorite#toggle" >
+  <i class="fas fa-heart" data-like-button-target="icon"></i>
+  <%= link_to "like profile", user_path(@user), remote: true, method: :post %>
+</div>
