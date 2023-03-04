@@ -1,11 +1,12 @@
 .chatroom {
-  background: white;
+  background: $peach;
   margin-top: 9px;
   height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
+  border-radius: 3%;
 
   h1 {
     border-bottom: 1px solid $gray-200;
@@ -26,5 +27,9 @@
     .form-group {
       margin-bottom: 0;
     }
+  }
+
+  .msg-colour {
+    color: $peach;
   }
 }
