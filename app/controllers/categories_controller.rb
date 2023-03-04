@@ -4,5 +4,6 @@ class CategoriesController < ApplicationController
 
   def new
     @category = Category.new
+    render :new
   end
 end
