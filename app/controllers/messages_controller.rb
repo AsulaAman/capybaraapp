@@ -1,13 +1,17 @@
 class MessagesController < ApplicationController
-
   def create
+    @chatroom = Chatroom.find(params[:chatroom_id])
     @message = Message.new(message_params)
     @message.user = current_user
-    @message.chatroom = Chatroom.find(params[:chatroom_id])
+    @message.chatroom = @chatroom
     if @message.save
-      redirect_to chatroom_path(@message.chatroom)
+      ChatroomChannel.broadcast_to(
+        @chatroom,
+        render_to_string(partial: "message", locals: { message: @message })
+      )
+      head :ok
     else
-      render 'chatrooms/show', alert: "Message can't be blank"
+      render 'chatrooms/show', messsage: "unproccessable entity"
     end
   end
 
