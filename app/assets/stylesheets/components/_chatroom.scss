@@ -15,7 +15,7 @@
   }
 
   .messages {
-    height: 100%;
+    height: calc(100vh - 175px);
     overflow: scroll;
     padding: 1rem;
   }
@@ -35,9 +35,24 @@
 
   .text-right {
     text-align: right;
+    // position: relative;
+    padding-right: 50px;
+    margin-bottom: 10px;
+    background: #EEE;
+    padding-right: 50px;
+    border-radius: 3%;
+
   }
 
   .text-left {
     text-align: left;
+    // position: relative;
+    padding-left: 50px;
+    margin-bottom: 10px;
+    background-color: black;
+    color: white;
+    width: fit-content;
+    padding-right: 50px;
+    border-radius: 3%;
   }
 }
