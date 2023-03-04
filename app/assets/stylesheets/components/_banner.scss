@@ -1,0 +1,21 @@
+.banner {
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f2964a;
+  background-size: cover;
+  h1 {
+    color: #051367;
+    font-weight: bold;
+    font-size: 85px;
+  }
+  p {
+    color: #051367;
+    opacity: 0.8;
+    font-size: 25px;
+    font-weight: lighter;
+    margin-bottom: 50px;
+  }
+
+}
