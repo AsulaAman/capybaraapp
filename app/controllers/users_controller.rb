@@ -16,6 +16,10 @@ class UsersController < ApplicationController
     # end
   end
 
+  def search
+    # users can select a category, input prefered meetup location, age range, gender
+  end
+
   def show
     @user = User.find(params[:id])
   end
