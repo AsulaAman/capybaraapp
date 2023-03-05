@@ -4,6 +4,9 @@
 
 import { application } from "./application"
 
+import FilterUsersMapController from "./filter_users_map_controller"
+application.register("filter-users-map", FilterUsersMapController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 

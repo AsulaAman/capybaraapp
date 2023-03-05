@@ -1,0 +1,16 @@
+<div class="search-form text-white">
+  <%= form_with url: user_filter_users_map_path, method: :post do |f| %>
+    <%= f.label :categories, "Interests: " %>
+    <%= f.select :categories, ['Fitness & Sports', 'Entertainment', 'Art & Culture', 'Food & Drink', 'Community & Envoirnment', 'Hobbies & Passions', 'Travel & Adventure' ] %>
+    <%= f.label :gender, "Gender: " %>
+    <%= f.select :gender, ['Male', 'Female'] %>
+    <%= f.label :address, "Meet up location: " %>
+    <%= f.text_field :address %>
+    <%= f.submit "Search" %>
+  <% end %>
+</div>
+
+<div style="width: 100%; height: 600px;"
+  data-controller="filter-users-map"
+  data-filter-users-map-markers-value="<%= @markers.to_json %>"
+  data-filter-users-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>

@@ -3,6 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
+
     @markers = @users.geocoded.map do |user|
       {
         lat: user.latitude,
@@ -16,14 +17,34 @@ class UsersController < ApplicationController
     # end
   end
 
-  def search
+  def search_map; end
+
+  def filter_users_map
     # users can select a category, input prefered meetup location, age range, gender
+    users_filtered_by_gender_params = User.all.where(gender: params[:gender])
+    category = Category.find_by(name: params[:categories])
+    interests = Interest.where(user_id: users_filtered_by_gender_params.ids, category_id: category)
+    @users_for_map = interests.map { |interest| User.find(interest.user_id) } # users with the selected category and gender
+    @users_for_map = User.near("%#{params[:address]}%", 5) # users within 5km of the address inputted
+    # maybe use SQL query to find ILIKE for address from user (so returns all users with that address-ish)
+    @markers = @users_for_map.map do |user|
+      {
+        lat: user.geocode[0],
+        lng: user.geocode[1],
+        profile_window_html: render_to_string(partial: "profile_window", locals: { user: user })
+      }
+    raise
+    end
+
+    # redirect_to user_get_filter_users_map_path, params: @markers
+    redirect_to controller: 'users', action: 'the_results', markers: @markers
+  end
+
+  def the_results
   end
 
   def show
     @user = User.find(params[:id])
-
-  # Showing users on the map
   end
 
   def edit

@@ -4,7 +4,9 @@ Rails.application.routes.draw do
 
   resources :pages, only: [:index]
   resources :users, only: [:index, :show, :new, :create, :edit] do
-    get 'search', to: 'users#search'
+    get 'search_map', to: 'users#search_map'
+    post 'filter_users_map', to: 'users#filter_users_map'
+    get 'the_results', to: 'users#the_results'
   end
   resources :categories, only: [:index]
   resources :chatrooms, only: [:show] do
