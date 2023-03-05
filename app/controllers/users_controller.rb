@@ -24,16 +24,17 @@ class UsersController < ApplicationController
     users_filtered_by_gender_params = User.all.where(gender: params[:gender])
     category = Category.find_by(name: params[:categories])
     interests = Interest.where(user_id: users_filtered_by_gender_params.ids, category_id: category)
-    @users_for_map = interests.map { |interest| User.find(interest.user_id) } # users with the selected category and gender
-    @users_for_map = User.near("%#{params[:address]}%", 5) # users within 5km of the address inputted
+    @users_for_map = interests.map { |interest| User.find(interest.user_id) }
+    users_filtered_by_location_params = User.near(params[:address], 5).to_a
+    results = @users_for_map & users_filtered_by_location_params
+
     # maybe use SQL query to find ILIKE for address from user (so returns all users with that address-ish)
-    @markers = @users_for_map.map do |user|
+    @markers = results.map do |user|
       {
         lat: user.geocode[0],
         lng: user.geocode[1],
         profile_window_html: render_to_string(partial: "profile_window", locals: { user: user })
       }
-    raise
     end
 
     # redirect_to user_get_filter_users_map_path, params: @markers
