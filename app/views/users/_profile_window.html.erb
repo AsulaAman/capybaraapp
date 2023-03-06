@@ -1,0 +1,6 @@
+<h2><%= user.first_name%>, <%= user.age %></h2>
+<p>My interests : </p>
+<p><% user.categories.each do |c| %></p>
+<p><%= c.name %></p>
+<p><% end %></p>
+<%= link_to "Message", user_path(user), class: "btn btn-primary mb-3" %>
