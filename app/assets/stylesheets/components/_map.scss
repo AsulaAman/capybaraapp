@@ -2,13 +2,46 @@
   max-width: 300px;
 }
 
-.mapboxgl-popup-content {
-  font-family: "Open Sans", sans-serif;
+.mapboxgl-popup-close-button {
+  display: none;
 }
 
-.window {
+
+.mapboxgl-popup-content {
+  font-family: "Tenor Sans", sans-serif;
+  background: #fff;
   border-radius: 3px;
-  padding: 20px;
-  overflow: hidden;
-  position: relative;
+  padding: 15px 25px;
 }
+
+.mapboxgl-popup-content h2 {
+  font-size: 24px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.mapboxgl-popup-content p {
+  font-size: 12px;
+  font-weight: 200;
+  margin-bottom: 0.5em;
+}
+
+// .mapboxgl-popup-content div {
+//   font-family: "Tenor Sans", sans-serif;
+//   border-radius: 5px;
+//   padding: 10px 15px;
+// }
+
+.mapboxgl-popup-content a {
+  background: $peach;
+  color: black;
+  margin: 18px;
+  border-radius: 3px;
+  padding: 4px 12px;
+  border-style: none;
+  text-decoration: none;
+}
+
+.mapboxgl-popup-content a:visited {text-decoration: none; }
+.mapboxgl-popup-content a:hover { text-decoration: none; }
+.mapboxgl-popup-content a:active { text-decoration: none; }

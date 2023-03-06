@@ -22,26 +22,19 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     // this.markersValue is undefined, so we can't check the length of the array,
-    // if (this.hasMarkersValue) {
-    //   // basically we don't want to try to run the forEach if there are no markers
-    //   // if no markers then we should return an empty array, just something to stop errors, and just load map with no markers on it
-    //   this.markersValue.forEach((marker) => {
-    //     const popup = new mapboxgl.Popup().setHTML(marker.profile_window_html)
-    //     new mapboxgl.Marker()
-    //     .setLngLat([ marker.lng, marker.lat ])
-    //     .setPopup(popup)
-    //     .addTo(this.filterUsersMap)
-    //   })
-    // } else {
-    //   return []
-    // }
-    this.markersValue.forEach((marker) => {
-      const popup = new mapboxgl.Popup().setHTML(marker.profile_window_html)
-      new mapboxgl.Marker()
+    if (this.hasMarkersValue) {
+      // basically we don't want to try to run the forEach if there are no markers
+      // if no markers then we should return an empty array, just something to stop errors, and just load map with no markers on it
+      this.markersValue.forEach((marker) => {
+        const popup = new mapboxgl.Popup().setHTML(marker.profile_window_html)
+        new mapboxgl.Marker()
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
-        .addTo(this.map)
-    })
+        .addTo(this.filterUsersMap)
+      })
+    } else {
+      return []
+    }
   }
 
   #fitMapToMarkers() {
