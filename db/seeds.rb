@@ -19,7 +19,6 @@ User.create(first_name: "Susan", last_name: "A", age: 34, address: "London N19 5
 User.create(first_name: "Tim", last_name: "A", age: 29, address: "London EC1Y 1BE", bio: "I like tennis", gender: "Male", email: "tim@gmail.com", password: 12345678)
 User.create(first_name: "Rachel", last_name: "A", age: 22, address: "London N19 3LP", bio: "I like fitness", gender: "Female", email: "rachel@gmail.com", password: 12345678)
 
-
 Category.create(name: "Fitness & Sports")
 Category.create(name: "Entertainment")
 Category.create(name: "Art & Culture")
@@ -37,5 +36,8 @@ Interest.create(user_id: User.find(6).id, category_id: Category.third.id)
 Interest.create(user_id: User.find(7).id, category_id: Category.first.id)
 Interest.create(user_id: User.last.id, category_id: Category.last.id)
 Interest.create(user_id: User.last.id, category_id: Category.first.id)
+Interest.create(user_id: User.find(5).id, category_id: Category.third)
+Interest.create(user_id: User.find(5).id, category_id: Category.first.id)
+Interest.create(user_id: User.find(8).id, category_id: Category.first.id)
 
 puts "Database seeded"

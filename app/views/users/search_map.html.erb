@@ -1,20 +1,4 @@
-<div class="form-container">
-  <ul class="search-form">
-    <%= form_with url: user_filter_users_map_path, method: :post do |f| %>
-      <li><%= f.label :categories, "What to do: " %></li>
-      <li><%= f.select :categories, ['Art & Culture', 'Community & Envoirnment', 'Entertainment','Fitness & Sports', 'Food & Drink',  'Hobbies & Passions', 'Travel & Adventure' ], prompt: "Interests" %></li>
-      <li><%= f.label :gender, "Looking for: " %></li>
-      <li><%= f.select :gender, ['Female', 'Male'], prompt: "Gender" %></li>
-      <li><%= f.label :address, "Meetup Location: " %></li>
-      <li><%= f.text_field :address, placeholder: "District e.g. Hackney"  %></li>
-      <%# <li><%= f.label :age, "Age:" %>
-      <%# <li><%= f.select :age, ['Above 40', '35-39', '30-34', '25-29', '20-24'] %>
-      <div class="search-form-btn">
-        <li><%= f.submit "Search", class: "search-form-btn btn btn-primary" %></li>
-      </div>
-    <% end %>
-  </ul>
-</div>
+<%= render "search_form" %>
 
 <div style="width: 100%; height: 400px;"
   data-controller="filter-users-map"

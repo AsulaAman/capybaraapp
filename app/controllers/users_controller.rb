@@ -15,14 +15,12 @@ class UsersController < ApplicationController
   def search_map; end
 
   def filter_users_map
-    # users can select a category, input prefered meetup location, age range, gender
     users_filtered_by_gender_params = User.all.where(gender: params[:gender])
     category = Category.find_by(name: params[:categories])
     interests = Interest.where(user_id: users_filtered_by_gender_params.ids, category_id: category)
     @users_for_map = interests.map { |interest| User.find(interest.user_id) }
     users_filtered_by_location_params = User.near(params[:address], 2).to_a
     results = @users_for_map & users_filtered_by_location_params
-
     # maybe use SQL query to find ILIKE for address from user (so returns all users with that address-ish)
     @markers = results.map do |user|
       {
@@ -45,17 +43,4 @@ class UsersController < ApplicationController
 
   def edit
   end
-
-  def new
-  end
-
-  def create
-  end
-
-  private
-
-  # def filter_users_by_age_group
-  #   users = User.all.where(age: params[:age])
-  # end
-
 end
