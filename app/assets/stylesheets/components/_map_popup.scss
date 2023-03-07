@@ -7,9 +7,7 @@
 }
 
 .mapboxgl-popup-close-button {
-  display: none;
 }
-
 
 .mapboxgl-popup-content {
   font-family: "Tenor Sans", sans-serif;
@@ -30,12 +28,6 @@
   margin-bottom: 0.5em;
 }
 
-// .mapboxgl-popup-content div {
-//   font-family: "Tenor Sans", sans-serif;
-//   border-radius: 5px;
-//   padding: 10px 15px;
-// }
-
 .mapboxgl-popup-content a {
   background: $peach;
   color: black;
@@ -44,8 +36,16 @@
   padding: 4px 12px;
   border-style: none;
   text-decoration: none;
+  align-items: center;
 }
 
 .mapboxgl-popup-content a:visited {text-decoration: none; }
 .mapboxgl-popup-content a:hover { text-decoration: none; }
 .mapboxgl-popup-content a:active { text-decoration: none; }
+
+.mapboxgl-popup-content .map-avatar {
+  width: 40px;
+  border-radius: 50%;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+  border: white 1px solid;
+}
