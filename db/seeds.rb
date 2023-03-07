@@ -40,4 +40,10 @@ Interest.create(user_id: User.find(5).id, category_id: Category.third)
 Interest.create(user_id: User.find(5).id, category_id: Category.first.id)
 Interest.create(user_id: User.find(8).id, category_id: Category.first.id)
 
+puts "Creating chatrooms"
+
+Chatroom.create(name: "Chatroom 1")
+Chatroom.create(name: "Chatroom 2")
+
+
 puts "Database seeded"
