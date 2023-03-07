@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :pages, only: [:index] do
     post 'search', to: 'pages#search'
   end
-  resources :users, only: [:index, :show, :new, :create, :edit]
+  resources :users, only: [:index, :show, :new, :create, :edit, :update]
   resources :categories, only: [:index, :new, :create]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

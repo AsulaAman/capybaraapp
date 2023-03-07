@@ -1,1 +1,31 @@
-<h1>This is the show page of user</h1>
+<h1>Profile</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="profile-image">
+        <%= image_tag @user.avatar_url %>
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="profile-header">
+        <h1><%= @user.name %></h1>
+        <p><%= @user.bio %></p>
+      </div>
+      <div class="profile-stats">
+        <div class="row">
+          <div class="col-md-4">
+            <p>Followers</p>
+            <p><%= @user.followers.count %></p>
+          </div>
+          <div class="col-md-4">
+            <p>Following</p>
+            <p><%= @user.following.count %></p>
+          </div>
+        </div>
+      </div>
+      <div class="profile-actions">
+        <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
+      </div>
+    </div>
+  </div>
+</div>
