@@ -1,7 +1,7 @@
+<%= link_to "New search",  user_search_map_path(:user_id), class: 'btn btn-primary mt-3 my-3' %>
+<%= link_to "List view",  user_search_map_path(:user_id), class: 'btn btn-primary mt-3 my-3' %>
+
 <div style="width: 100%; height: 600px;"
   data-controller="filter-users-map"
   data-filter-users-map-markers-value="<%= params[:markers].to_json %>"
   data-filter-users-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>"></div>
-
-
-<%= link_to "New search",  user_search_map_path(:user_id), class: 'btn btn-primary mt-3 mx-3' %>
