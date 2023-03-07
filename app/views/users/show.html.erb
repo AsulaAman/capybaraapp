@@ -1,17 +1,35 @@
-<div class="container mt-3">
-<h1>Helen C, 29</h1>
-  <div class="card" style="width:400px">
-    <img class="card-img-top" src="https://kbimages1-a.akamaihd.net/248efc87-e61c-4479-8ee1-64f25b1d33ba/1200/1200/False/you-re-a-good-friend-capybara.jpg" class="rounded-circle" alt="profile photo" style="width:100%">
+<div class="container p-5 my-5 bg-light">
+  <h1 class="card-title"><strong>Helen C, 29</strong></h1>
+  <div class="card" style="width:300px">
+    <img class="rounded-circle" class="img-responsive" src="https://www.allthingswild.co.uk/wp-content/uploads/2019/11/capy.jpg" alt="profile photo" style="width:100%">
     <div class="card-body">
-      <p class="card-text">
-      <%= @user.first_name %>
-      <%= @user.last_name %>
+      <strong><%= @user.first_name %>
+      <%= @user.last_name %></strong>
+      <br>
       <%= @user.address %>
+      <br>
       <%= @user.bio %>
+      <br>
       <%= @user.gender %>
-      <%= @user.dob %></p>
-    </div>
-
-    <div class="card" style="width:400px">
-    </div>
+      <br>
+      <%= @user.dob %>
   </div>
+<a href="#" class="button">Send Message</a>
+  </div>
+</div>
+<style>
+.button {
+  background-color: orange;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+.rounded_circle {
+  border-radius: 50%;
+  padding: 30px;
+}
+</style>
