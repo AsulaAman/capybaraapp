@@ -36,6 +36,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_152050) do
     t.index ["favoritor_id", "favoritor_type"], name: "fk_favorites"
     t.index ["favoritor_type", "favoritor_id"], name: "index_favorites_on_favoritor"
     t.index ["scope"], name: "index_favorites_on_scope"
+  create_table "chatrooms", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "interests", force: :cascade do |t|
@@ -45,6 +49,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_152050) do
     t.bigint "category_id"
     t.index ["category_id"], name: "index_interests_on_category_id"
     t.index ["user_id"], name: "index_interests_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "content"
+    t.bigint "chatroom_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chatroom_id"], name: "index_messages_on_chatroom_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -57,16 +71,20 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_03_152050) do
     t.datetime "updated_at", null: false
     t.string "first_name"
     t.string "last_name"
-    t.datetime "dob"
     t.string "address"
     t.string "bio"
     t.string "gender"
     t.float "latitude"
     t.float "longitude"
+    t.string "nickname"
+    t.integer "age"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "interests", "categories"
   add_foreign_key "interests", "users"
+  add_foreign_key "messages", "chatrooms"
+  add_foreign_key "messages", "users"
+  end
 end
