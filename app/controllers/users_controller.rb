@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  # before_action :authenticate_user!
+  include Devise::Controllers::Helpers
 
   def index
     @users = User.all
