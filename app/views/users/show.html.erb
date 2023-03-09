@@ -1,18 +1,12 @@
 <div class="container p-5 my-5 bg-light">
-  <h1 class="card-title"><strong>Helen C, 29</strong></h1>
+  <h1 class="card-title"><strong><%= @user.first_name %> <%= @user.last_name %></strong>, <%= @user.age %></h1>
   <div class="card" style="width:300px">
-    <img class="rounded-circle" class="img-responsive" src="https://www.allthingswild.co.uk/wp-content/uploads/2019/11/capy.jpg" alt="profile photo" style="width:100%">
+    <img class="rounded-circle" class="img-responsive" src="https://res.cloudinary.com/duufhyqzx/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1678047757/Capybara%20profile%20picture/stephanie-liverani-Zz5LQe-VSMY-unsplash_vttxk0.jpg" alt="profile photo" style="width:100%">
     <div class="card-body">
-      <strong><%= @user.first_name %>
-      <%= @user.last_name %></strong>
-      <br>
-      <%= @user.address %>
-      <br>
       <%= @user.bio %>
       <br>
       <%= @user.gender %>
       <br>
-      <%= @user.age %>
     </div>
    <%= link_to "Send Message", chatroom_path %>
   </div>
