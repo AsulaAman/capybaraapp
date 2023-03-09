@@ -49,7 +49,8 @@ class UsersController < ApplicationController
   end
 
   def toggle_favorite
-    @user = User.find_by(id: params[:id])
+    @user = User.find(params[:id])
     current_user.favorited?(@user) ? current_user.unfavorite(@user) : current_user.favorite(@user)
+    @favorite_users = current_user.favorited_by_type('User')
   end
 end
