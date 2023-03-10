@@ -7,7 +7,8 @@ class UsersController < ApplicationController
       {
         lat: user.latitude,
         lng: user.longitude,
-        profile_window_html: render_to_string(partial: "profile_window", locals: { user: user })
+        profile_window_html: render_to_string(partial: "profile_window", locals: { user: user }),
+        marker_html: render_to_string(partial: "marker")
       }
     end
   end
@@ -26,7 +27,8 @@ class UsersController < ApplicationController
       {
         lat: user.geocode[0],
         lng: user.geocode[1],
-        profile_window_html: render_to_string(partial: "profile_window", locals: { user: user })
+        profile_window_html: render_to_string(partial: "profile_window", locals: { user: user }),
+        marker_html: render_to_string(partial: "marker")
       }
     end
 

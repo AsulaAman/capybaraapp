@@ -27,7 +27,11 @@ export default class extends Controller {
       // if no markers then we should return an empty array, just something to stop errors, and just load map with no markers on it
       this.markersValue.forEach((marker) => {
         const popup = new mapboxgl.Popup().setHTML(marker.profile_window_html)
-        new mapboxgl.Marker()
+
+        const customMarker = document.createElement("div")
+        customMarker.innerHTML = marker.marker_html
+
+        new mapboxgl.Marker(customMarker)
         .setLngLat([ marker.lng, marker.lat ])
         .setPopup(popup)
         .addTo(this.filterUsersMap)
