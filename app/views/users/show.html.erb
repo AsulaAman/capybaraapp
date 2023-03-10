@@ -1,26 +1,21 @@
-<h1>Profile</h1>
+<h1>My Profile</h1>
 <div class="container">
-  <div class="row">
-    <div class="col-md-5">
+    <div class="col">
       <div class="profile-image">
-        <%= image_tag %>
-      </div>
+        <%= cl_image_tag("danielle_johnsonselfiemuseum_09102021_ncejxd.jpg", crop: "thumb", :effect=>"auto_brightness", :height=>250, :quality=>"auto:best", radius: "max", :width=>250, class: "rounded-circle profile-image") %>
     </div>
-    <div class="col-md-7">
+    <div class="col-sm-8">
       <div class="profile-header">
-        <h1><%= @user.name %></h1>
-        <p><%= @user.bio %></p>
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <p>Hi, I’m Helen!
+          Food, dog and beach lover.
+          1/2 hungry, 1/2 sleepy.
+          📍 Shoreditch
+          Favorite things to do: Yoga 🧘🏽‍♀️, Cycling 🚴🏽‍♀️ & Painting 🎨 </p>
       </div>
       <div class="profile-stats">
         <div class="row">
-          <div class="col-md-4">
-            <p>Followers</p>
-            <p><%= @user.followers.count %></p>
-          </div>
-          <div class="col-md-4">
-            <p>Following</p>
-            <p><%= @user.following.count %></p>
-          </div>
+            <p>Connect with me!</p>
         </div>
       </div>
       <div class="profile-actions">

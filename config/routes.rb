@@ -6,7 +6,9 @@ Rails.application.routes.draw do
     post 'search', to: 'pages#search'
   end
   resources :users, only: [:index, :show, :new, :create, :edit, :update]
-  resources :categories, only: [:index, :new, :create]
+  get '/users/:id', to: 'users#show', as: 'profile'
+
+  resources :categories, only: [:index, :new]
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
