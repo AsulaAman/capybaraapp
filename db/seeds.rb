@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
-
 puts "Creating database..."
 
 Category.create(name: "Fitness & Sports")
@@ -52,8 +51,7 @@ User.create(first_name: "Emma", last_name: "J", age: 28, address: "Hoxton, Londo
 Interest.create(user_id: User.last.id, category_id: Category.first.id)
 Interest.create(user_id: User.last.id, category_id: Category.last.id)
 User.create(first_name: "Sarah", last_name: "W", age: 25, address: "Hoxton, London N1 6TR", bio: "Hi, I work as a marketing manager and I have helped launch several successful campaigns. In my free time, I enjoy reading and practicing yoga.", gender: "Female", horoscope: "Leo", profession: "Marketing Manager", email: "sarah@gmail.com", password: 12345678)
-Interest.create(user_id: User.last.id, category_id: Category.first.id)
-Interest.create(user_id: User.last.id, category_id: Category.last.id)
+Interest.create(user_id: User.last.id, category_id: Category.first.id
 
 puts "Creating chatrooms"
 
@@ -112,6 +110,6 @@ Category.create(name: "Religion")
 Category.create(name: "Spirituality")
 Category.create(name: "Philosophy")
 
-
+puts "Creating chatrooms"
 
 puts "Database seeded"
