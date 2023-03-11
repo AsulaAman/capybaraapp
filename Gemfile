@@ -29,6 +29,8 @@ gem "jbuilder"
 
 gem "devise"
 
+gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
+
 gem "geocoder"
 
 # Use Redis adapter to run Action Cable in production

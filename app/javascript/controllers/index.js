@@ -12,5 +12,8 @@ application.register("filter-users-map", FilterUsersMapController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import ToggleFavoriteController from "./toggle_favorite_controller"
+application.register("toggle-favorite", ToggleFavoriteController)
+
 import MapController from "./map_controller"
 application.register("map", MapController)

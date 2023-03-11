@@ -18,6 +18,7 @@ User.create(first_name: "David", last_name: "A", age: 38, address: "N19 5RQ", bi
 User.create(first_name: "Susan", last_name: "A", age: 34, address: "London N19 5BQ", bio: "I like different cuisines", gender: "Female", email: "susan@gmail.com", password: 12345678)
 User.create(first_name: "Tim", last_name: "A", age: 29, address: "London EC1Y 1BE", bio: "I like tennis", gender: "Male", email: "tim@gmail.com", password: 12345678)
 User.create(first_name: "Rachel", last_name: "A", age: 22, address: "London N19 3LP", bio: "I like fitness", gender: "Female", email: "rachel@gmail.com", password: 12345678)
+User.create(first_name: "Craig", last_name: "E", age: 36, address: "11 Leonard St, London EC2A 4AQ", bio: "I like kickboxing", gender: "Male", email: "craig@gmail.com", password: 12345678)
 
 Category.create(name: "Fitness & Sports")
 Category.create(name: "Entertainment")
@@ -39,11 +40,20 @@ Interest.create(user_id: User.last.id, category_id: Category.first.id)
 Interest.create(user_id: User.find(5).id, category_id: Category.third)
 Interest.create(user_id: User.find(5).id, category_id: Category.first.id)
 Interest.create(user_id: User.find(8).id, category_id: Category.first.id)
+Interest.create(user_id: User.find(9).id, category_id: Category.first.id)
 
 puts "Creating chatrooms"
 
 Chatroom.create(name: "Chatroom 1")
 Chatroom.create(name: "Chatroom 2")
-
+Chatroom.create(name: "Chatroom 3")
+Chatroom.create(name: "Chatroom 4")
+Chatroom.create(name: "Chatroom 5")
+Chatroom.create(name: "Chatroom 6")
+Chatroom.create(name: "Chatroom 7")
+Chatroom.create(name: "Chatroom 8")
+Chatroom.create(name: "Chatroom 9")
+Chatroom.create(name: "Chatroom 10")
+Chatroom.create(name: "Chatroom 11")
 
 puts "Database seeded"
