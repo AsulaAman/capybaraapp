@@ -2,7 +2,8 @@
   <ul class="search-form">
     <%= form_with url: user_filter_users_map_path, method: :post do |f| %>
       <li><%= f.label :categories, "What to do: " %></li>
-      <li><%= f.select :categories, ['Art & Culture', 'Community & Envoirnment', 'Entertainment','Fitness & Sports', 'Food & Drink',  'Hobbies & Passions', 'Travel & Adventure' ], select_html: {data: {controller: "tom_select"}} %></li>
+      <%# <li><%= f.select :categories, ['Art & Culture', 'Community & Envoirnment', 'Entertainment','Fitness & Sports', 'Food & Drink',  'Hobbies & Passions', 'Travel & Adventure' ], select_html: {data: {controller: "tom_select"}} %></li> %>
+      <li><%= f.select :categories, ['Art & Culture', 'Community & Envoirnment', 'Entertainment','Fitness & Sports', 'Food & Drink',  'Hobbies & Passions', 'Travel & Adventure' ], select_html: {data: {controller: "tom_select"}}</li> %>
       <li><%= f.label :gender, "Looking for: " %></li>
       <li><%= f.select :gender, ['Female', 'Male'], prompt: "Gender" %></li>
       <li><%= f.label :address, "Meetup Location: " %></li>
