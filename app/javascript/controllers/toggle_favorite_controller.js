@@ -16,9 +16,8 @@ export default class extends Controller {
 
   toggleLikeButton(likeUserId) {
     const likedUserId = `<%= @user.id %>`
-    // console.log(this.likeIconClass)
-    const likeButton = this.likeIconClassValue
-    console.log(likeButton)
-    likeButton.iconTarget.classList.add('red')
+    this.iconTarget.classList.toggle('red')
   }
+
+  toggleLikeButton(likedUserId);
 }

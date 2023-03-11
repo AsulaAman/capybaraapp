@@ -52,5 +52,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     current_user.favorited?(@user) ? current_user.unfavorite(@user) : current_user.favorite(@user)
     @favorite_users = current_user.favorited_by_type('User')
+    @favoritors = current_user.favoritors_by_type('User')
   end
 end

@@ -1,4 +1,9 @@
 <div class="container p-5 my-5 bg-light">
+  <div class="d-flex">
+    <%= link_to toggle_favorite_user_path(@user), remote: true, method: :post do %>
+      <%= render 'users/like_button', user: @user %>
+    <% end %>
+</div>
   <h1 class="card-title"><strong><%= @user.first_name %> <%= @user.last_name %>, <%= @user.age %></strong></h1>
   <div class="card" style="width:300px">
     <img class="rounded-circle" class="img-responsive" src="https://www.allthingswild.co.uk/wp-content/uploads/2019/11/capy.jpg" alt="profile photo" style="width:100%">
@@ -12,12 +17,7 @@
     <%= link_to "Send Message", chatroom_path %>
   </div>
 </div>
-<div data-toggle-favorite-like-icon-class="like-icon mx-2" data-controller="toggle-favorite" data-toggle-favorite-liked-user-id-value="<%= @user.id %>">
-  <i class="fa fa-heart"
-     data-toggle-favorite-target="icon"
-     data-action="click->toggle-favorite#toggleLikeButton"></i>
-  <%= link_to "Like this profile", toggle_favorite_user_path(@user), remote: true, method: :post %>
-</div>
+
 
 
 <%# <div class="like-icon mx-2 <%= 'red' if current_user.favorited?(cocktail)" data-id="<%= cocktail.id">  %>
