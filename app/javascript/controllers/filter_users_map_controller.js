@@ -22,7 +22,7 @@ export default class extends Controller {
 
   #addMarkersToMap() {
     // this.markersValue is undefined, so we can't check the length of the array,
-    if (this.hasMarkersValue) {
+    if (this.markersValue) {
       // basically we don't want to try to run the forEach if there are no markers
       // if no markers then we should return an empty array, just something to stop errors, and just load map with no markers on it
       this.markersValue.forEach((marker) => {
@@ -32,14 +32,14 @@ export default class extends Controller {
         .setPopup(popup)
         .addTo(this.filterUsersMap)
       })
-    } else {
-      return []
     }
   }
 
   #fitMapToMarkers() {
     const bounds = new mapboxgl.LngLatBounds()
+    if (this.markersValue) {
     this.markersValue.forEach(marker => bounds.extend([ marker.lng, marker.lat ]))
     this.filterUsersMap.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 0 })
+    }
   }
 }

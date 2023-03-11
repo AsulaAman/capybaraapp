@@ -15,9 +15,10 @@ class UsersController < ApplicationController
   def search_map; end
 
   def filter_users_map
-    users_filtered_by_gender_params = User.all.where(gender: params[:gender])
-    category = Category.find_by(name: params[:categories])
-    interests = Interest.where(user_id: users_filtered_by_gender_params.ids, category_id: category)
+    users_filtered_by_gender_params = User.where(gender: params[:user][:gender])
+    category = Category.where(name: params[:user][:categories])
+    interests_by_category = Interest.where(category_id: category.ids)
+    interests = interests_by_category.filter { |interest| users_filtered_by_gender_params.ids.include?(interest.user_id)}
     @users_for_map = interests.map { |interest| User.find(interest.user_id) }
     users_filtered_by_location_params = User.near(params[:address], 2).to_a
     results = @users_for_map & users_filtered_by_location_params

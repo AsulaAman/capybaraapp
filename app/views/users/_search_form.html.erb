@@ -1,11 +1,10 @@
 <div class="form-container">
   <ul class="search-form">
-    <%= form_with url: user_filter_users_map_path, method: :post do |f| %>
+    <%= simple_form_for :user, url: user_filter_users_map_path do |f| %>
       <li><%= f.label :categories, "What to do: " %></li>
-      <%# <li><%= f.select :categories, ['Art & Culture', 'Community & Envoirnment', 'Entertainment','Fitness & Sports', 'Food & Drink',  'Hobbies & Passions', 'Travel & Adventure' ], select_html: {data: {controller: "tom_select"}} %></li> %>
-      <li><%= f.select :categories, ['Art & Culture', 'Community & Envoirnment', 'Entertainment','Fitness & Sports', 'Food & Drink',  'Hobbies & Passions', 'Travel & Adventure' ], select_html: {data: {controller: "tom_select"}}</li> %>
+      <li><%= f.input :categories, collection: ['Art & Culture', 'Community & Envoirnment', 'Entertainment','Fitness & Sports', 'Food & Drink',  'Hobbies & Passions', 'Travel & Adventure' ], input_html: { multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}} %></li>
       <li><%= f.label :gender, "Looking for: " %></li>
-      <li><%= f.select :gender, ['Female', 'Male'], prompt: "Gender" %></li>
+      <li><%= f.input :gender, collection: ['Female', 'Male'] %></li>
       <li><%= f.label :address, "Meetup Location: " %></li>
       <li><%= f.text_field :address, placeholder: "District e.g. Hackney"  %></li>
       <div class="search-form-btn">
