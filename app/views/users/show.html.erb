@@ -1,26 +1,34 @@
 <h1>My Profile</h1>
-<div class="container">
-    <div class="col">
-      <div class="profile-image">
-        <%= cl_image_tag("danielle_johnsonselfiemuseum_09102021_ncejxd.jpg", crop: "thumb", :effect=>"auto_brightness", :height=>250, :quality=>"auto:best", radius: "max", :width=>250, class: "rounded-circle profile-image") %>
-    </div>
+<div class="p-2 bd-highlight" style="border: 1px;">
+
+  <div class="profile-image" class="pb">
+    <%= cl_image_tag("danielle_johnsonselfiemuseum_09102021_ncejxd.jpg", :radius=>30, :effect=>"auto_brightness", :height=>250, :quality=>"auto:best", :width=>"372px")%>
+  </div>
+
+  <div class="card" style="margin-top: 8rem; border-radius: 20px; padding: 8px 8px 8px 8px;">
     <div class="col-sm-8">
       <div class="profile-header">
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
         <p>Hi, I’m Helen!
-          Food, dog and beach lover.
-          1/2 hungry, 1/2 sleepy.
-          📍 Shoreditch
-          Favorite things to do: Yoga 🧘🏽‍♀️, Cycling 🚴🏽‍♀️ & Painting 🎨 </p>
-      </div>
-      <div class="profile-stats">
-        <div class="row">
-            <p>Connect with me!</p>
-        </div>
-      </div>
-      <div class="profile-actions">
-        <%= link_to 'Edit Profile', edit_user_path(@user), class: "btn btn-primary" %>
+          Food, dog and beach lover.</p>
+          <p>1/2 hungry, 1/2 sleepy</p>
+          <p>📍 Shoreditch</p>
+          <p>Favorite things to do: Yoga 🧘🏽‍♀️, Cycling 🚴🏽‍♀️ & Painting 🎨 </p>
       </div>
     </div>
+
+    <div class="profile-stats">
+      <div class="row">
+          <p>Connect with me!</p>
+      </div>
+    </div>
+
+    <div class="profile-actions" style="margin-left: 70%">
+      <%= link_to 'Connect', edit_user_path(@user), class:"btn btn-outline", style:"background-color: #b64bd4b7;"  %>
+    </div>
+
   </div>
+
+
+
 </div>
