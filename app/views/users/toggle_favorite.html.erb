@@ -1,0 +1,13 @@
+<div class="like-container">
+  <div class="like-card">
+    <h1>Your Likes</h1>
+    <p>You've added<span><% @favorite_users.each do |u| %>
+      <%= u.first_name %>
+    <% end %><span>as your friends!</p>
+  </div>
+
+  <div class="like-card">
+    <h1>Who Likes You?</h1>
+    <p><%=  %></p>
+  </div>
+</div>

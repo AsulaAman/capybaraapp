@@ -4,8 +4,22 @@
 
 import { application } from "./application"
 
+import ChatroomSubscriptionController from "./chatroom_subscription_controller"
+application.register("chatroom-subscription", ChatroomSubscriptionController)
+
+import FilterUsersMapController from "./filter_users_map_controller"
+application.register("filter-users-map", FilterUsersMapController)
+
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+<<<<<<< HEAD
 import TomSelectController from "./tom_select_controller"
 application.register("tom-select", TomSelectController)
+=======
+import ToggleFavoriteController from "./toggle_favorite_controller"
+application.register("toggle-favorite", ToggleFavoriteController)
+
+import MapController from "./map_controller"
+application.register("map", MapController)
+>>>>>>> 3a51f367a909ea040d6049ae8e30d10854d36035

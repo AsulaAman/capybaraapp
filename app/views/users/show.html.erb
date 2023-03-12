@@ -72,3 +72,32 @@
 
 
 </div>
+<div class="container p-5 my-5 bg-light">
+  <div class="d-flex">
+    <%= link_to toggle_favorite_user_path(@user), remote: true, method: :post do %>
+      <%= render 'users/like_button', user: @user %>
+    <% end %>
+</div>
+  <h1 class="card-title"><strong><%= @user.first_name %> <%= @user.last_name %>, <%= @user.age %></strong></h1>
+  <div class="card" style="width:300px">
+    <img class="rounded-circle" class="img-responsive" src="https://res.cloudinary.com/duufhyqzx/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1678047757/Capybara%20profile%20picture/stephanie-liverani-Zz5LQe-VSMY-unsplash_vttxk0.jpg" alt="profile photo" style="width:100%">
+    <div class="card-body">
+      <%= @user.address %>
+      <br>
+      <%= @user.bio %>
+      <br>
+      <%= @user.gender %>
+      <br>
+      <%= @user.profession %>
+      <br>
+      <%= @user.horoscope %>
+
+    </div>
+    <%= link_to "Send Message", chatroom_path %>
+  </div>
+</div>
+
+
+
+<%# <div class="like-icon mx-2 <%= 'red' if current_user.favorited?(cocktail)" data-id="<%= cocktail.id">  %>
+<%# add red class to like icon if current user has favorite this user, data id is the favorited user id %>
