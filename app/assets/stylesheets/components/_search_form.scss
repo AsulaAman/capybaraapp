@@ -1,13 +1,17 @@
-.search-form {
-  color: $white;
-  list-style-type: none;
-  margin: 70px;
-  align-items: center;
-  line-height: 32px;
-  text-align: center;
+.search-form{
+  color: white;
+  padding: 10px 20px;
+  margin-top: 50px;
+  border-radius: 3px;
+  font-size: 18px;
+  margin-bottom: 30px;
+  font-family: $headers-font;
+  .btn {
+    width: 100%;
+    margin-bottom: 20px
+  }
 }
 
-.search-form-btn {
-  margin-top: 12px;
-  text-align: center;
+.form-category-select {
+  border: none;
 }

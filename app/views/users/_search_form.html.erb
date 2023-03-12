@@ -1,15 +1,23 @@
-<div class="form-container">
-  <ul class="search-form">
-    <%= simple_form_for :user, url: user_filter_users_map_path do |f| %>
-      <li><%= f.label :categories, "What to do: " %></li>
-      <li><%= f.input :categories, collection: ['Art & Culture', 'Community & Envoirnment', 'Entertainment','Fitness & Sports', 'Food & Drink',  'Hobbies & Passions', 'Travel & Adventure' ], input_html: { multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}} %></li>
-      <li><%= f.label :gender, "Looking for: " %></li>
-      <li><%= f.input :gender, collection: ['Female', 'Male'] %></li>
-      <li><%= f.label :address, "Meetup Location: " %></li>
-      <li><%= f.text_field :address, placeholder: "District e.g. Hackney"  %></li>
-      <div class="search-form-btn">
-        <li><%= f.submit "Search", class: "btn btn-primary mt-3" %></li>
-      </div>
-    <% end %>
-  </ul>
+<%= @params %>
+<div class="search-form">
+  <div class="row justify-content-center">
+    <div class="col-12 col-sm-4">
+      <%= simple_form_for :user, url: user_filter_users_map_path do |f| %>
+        <div class="form-inputs">
+          <%= f.input :categories, collection: ['Art & Culture', 'Community & Envoirnment', 'Entertainment','Fitness & Sports', 'Food & Drink',  'Hobbies & Passions', 'Travel & Adventure' ],
+                      label: 'What to do',
+                      prompt: "Select a category (Max 3)",
+                      required: false,
+                      input_html: { multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}, class: "form-category-select form-control"} %>
+          <%= f.input :gender, collection: ['Female', 'Male'], label: 'Looking for', required: false,
+                      prompt: 'Women',
+                      input_html: { data: {controller: "tom-select", tom_select_options_value: {tags: true}}, class: "form-category-select form-control"} %>
+          <%= f.input :address, placeholder: "District e.g. Hackney", label: "Meetup Location", required: false  %>
+        </div>
+        <div class="form-actions">
+          <%= f.submit "Search", class: "btn btn-primary mt-3" %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
