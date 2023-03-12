@@ -1,5 +1,9 @@
-.mapboxgl-popup {
-  max-width: 300px;
+.mapboxgl-popup div {
+  max-width: 400px;
+}
+
+.mapboxgl-popup div .container {
+  display: flex;
 }
 
 .mapboxgl-popup-content div {
