@@ -1,4 +1,5 @@
 // Specific CSS for your home-page
+<<<<<<< HEAD
 // body {background-color: coral;}
 // h1 {
 //   text-align: center;
@@ -8,3 +9,20 @@
 //   text-align: center;
 
 // }
+=======
+.home-title {
+  font-size: 36px;
+  font-weight: 900;
+  margin: auto;
+  margin-top: 350px;
+  text-align: center;
+  font-family: $headers-font;
+  color: $peach;
+}
+
+p {
+  font-family: $headers-font;
+  font-size: 20px;
+  font-weight: 500;
+}
+>>>>>>> 75f029563ddf74001e606a271f9b333115733b6b
