@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!, only: :toggle_favorite
 
   def index
     @users = User.all
@@ -77,5 +78,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+  end
+
+  def toggle_favorite
+    @user = User.find(params[:id])
+    current_user.favorited?(@user) ? current_user.unfavorite(@user) : current_user.favorite(@user)
+    @favorite_users = current_user.favorited_by_type('User')
+    @favoritors = current_user.favoritors_by_type('User')
   end
 end
