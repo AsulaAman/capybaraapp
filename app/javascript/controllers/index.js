@@ -6,11 +6,15 @@ import { application } from "./application"
 
 import ChatroomSubscriptionController from "./chatroom_subscription_controller"
 application.register("chatroom-subscription", ChatroomSubscriptionController)
+
 import FilterUsersMapController from "./filter_users_map_controller"
 application.register("filter-users-map", FilterUsersMapController)
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import ToggleFavoriteController from "./toggle_favorite_controller"
+application.register("toggle-favorite", ToggleFavoriteController)
 
 import MapController from "./map_controller"
 application.register("map", MapController)
