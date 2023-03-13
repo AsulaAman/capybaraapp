@@ -1,0 +1,34 @@
+<h3 class="favorite-header mt-3 mx-4 mb-3">Who Likes You</h1>
+  <% @favoritors.each do |u| %>
+    <div class="favorite-users">
+      <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+        <div class="favorite-content">
+          <p id="favorite-title"><strong><%= u.first_name %></strong>, <small><%= u.age %></small></p>
+          <p><%= u.profession %></p>
+          <p> <span><% u.categories.each do |c| %>
+            <i class="fa-solid fa-magnifying-glass"></i> <%= c.name %>
+          <% end %></span></p>
+        </div>
+        <div class="favorite-action">
+          <%= link_to "💬 Chat", chatroom_path(@user), class: "btn btn-flat" %>
+        </div>
+    </div>
+  <% end %>
+
+
+<h3 class="favorite-header mt-3 mx-4 mb-3">Your Likes</h1>
+  <% @favorite_users.each do |u| %>
+    <div class="favorite-users">
+      <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+        <div class="favorite-content">
+          <p id="favorite-title"><strong><%= u.first_name %></strong>, <small><%= u.age %></small></p>
+          <p><%= u.profession %></p>
+          <p> <span><% u.categories.each do |c| %>
+            <i class="fa-solid fa-magnifying-glass"></i> <%= c.name %>
+          <% end %></span></p>
+        </div>
+        <div class="favorite-action">
+          <%= link_to "💬 Chat", chatroom_path(@user), class: "btn btn-flat" %>
+        </div>
+    </div>
+  <% end %>
