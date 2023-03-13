@@ -7,14 +7,14 @@
                       label: 'What to do',
                       prompt: "Select a category (Max 3)",
                       required: false,
-                      input_html: { multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true}}, class: "form-category-select form-control"} %>
-          <%= f.input :gender, collection: ['Female', 'Male'], label: 'Looking for', required: false,
-                      prompt: 'Women',
+                      input_html: { multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true, maxItems: 3}}, class: "form-category-select form-control"} %>
+          <%= f.input :gender, collection: ['Women', 'Men'], label: 'Looking for', required: false,
+                      prompt: 'Gender',
                       input_html: { data: {controller: "tom-select", tom_select_options_value: {tags: true}}, class: "form-category-select form-control"} %>
           <%= f.input :address, placeholder: "District e.g. Hackney", label: "Meetup Location", required: false  %>
         </div>
         <div class="form-actions">
-          <%= f.submit "Search", class: "btn btn-primary mt-3" %>
+          <%= f.submit "Search", class: "btn btn-primary mx-auto" %>
         </div>
       <% end %>
     </div>
