@@ -1,4 +1,4 @@
-<div data-toggle-favorite-like-icon-class="like-icon mx-2 <%= 'red' if current_user.favorited?(user) %>" data-controller="toggle-favorite" data-toggle-favorite-liked-user-id-value="<%= @user.id %>">
+<div data-toggle-favorite-like-icon-class="like-icon mx-2 <%= 'red' if current_user && current_user.favorited?(@user) %>" data-controller="toggle-favorite" data-toggle-favorite-liked-user-id-value="<%= @user.id %>">
   <i class="fa fa-heart"
      data-toggle-favorite-target="icon"
      data-action="click->toggle-favorite#toggleLikeButton" data-id="<%= @user.id %>"></i>
