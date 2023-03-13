@@ -1,13 +1,17 @@
 <div class="container">
   <%= image_tag("https://res.cloudinary.com/duufhyqzx/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1678047757/Capybara%20profile%20picture/stephanie-liverani-Zz5LQe-VSMY-unsplash_vttxk0.jpg", class: "avatar") %>
   <div class="user-info-box">
-    <h2><%= user.first_name%>, <%= user.age %></h2>
-    <p>My interests : </p>
-    <p><% user.categories.each do |c| %></p>
-    <p><%= c.name %></p>
-    <p><% end %></p>
+    <h2><%= user.first_name%> <span class="text-muted"><%= user.age %></span></h2>
+    <% user.categories.each do |c| %>
+    <p id="interest"><%= c.name %></p>
+    <% end %>
+    <% if user.favoritors.any? %>
+      <p class="favorites"><i class="fa fa-heart"></i> <%= user.favoritors.count %></p>
+      <% else %>
+      <i class="fa fa-heart favorites"></i> <%= 0 %>
+    <% end %>
   </div>
 </div>
-<div class="info-action">
-  <%= link_to "View Profile", user_path(user), class: "btn btn-primary mb-3" %>
+<div class="info-action row">
+  <%= link_to "View Profile", user_path(user), class: "btn btn-primary col-8 mx-auto" %>
 </div>
