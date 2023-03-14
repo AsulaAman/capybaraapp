@@ -76,10 +76,10 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_113328) do
     t.string "address"
     t.string "bio"
     t.string "gender"
-    t.string "nickname"
-    t.integer "age"
     t.float "latitude"
     t.float "longitude"
+    t.string "nickname"
+    t.integer "age"
     t.string "horoscope"
     t.string "profession"
     t.index ["email"], name: "index_users_on_email", unique: true
