@@ -8,24 +8,23 @@ class UsersController < ApplicationController
       {
         lat: user.latitude,
         lng: user.longitude,
-        profile_window_html: render_to_string(partial: "profile_window", locals: { user: user})
+        info_window_html: render_to_string(partial: "profile_window", locals: { user: user})
       }
     end
   end
 
   def search_map
-    @users = User.all
     if params[:markers].present?
       # markers_as_numbers = params[:markers].map(&:to_i)
-      @markers = User.where(id: params[:markers]).geocoded.map do |user|
+      @markers = params[:markers].map do |marker|
         {
-          lat: user.latitude,
-          lng: user.longitude,
-          info_window_html: render_to_string(partial: "profile_window", locals: {user: user })
+          lat: marker[:lat],
+          lng: marker[:lng],
+          info_window_html: render_to_string(partial: "profile_window", locals: { user: User.find(marker[:user_id]) })
         }
       end
     else
-      @markers = @users.geocoded.map do |user|
+      @markers = User.geocoded.map do |user|
         {
           lat: user.latitude,
           lng: user.longitude,
@@ -36,20 +35,20 @@ class UsersController < ApplicationController
   end
 
   def filter_users_map
-    users_filtered_by_gender_params = User.where(gender: params[:user][:gender])
+    gender = params[:user][:gender]
+    users_filtered_by_gender_params = gender.present? ? User.where(gender: gender) : User.all
     category = Category.where(name: params[:user][:categories])
     interests_by_category = Interest.where(category_id: category.ids)
     interests = interests_by_category.filter { |interest| users_filtered_by_gender_params.ids.include?(interest.user_id)}
     users_for_map = interests.map { |interest| User.find(interest.user_id) }
-    # fix this
     users_filtered_by_location_params = User.near(params[:user][:address], 2).to_a
     results = users_for_map & users_filtered_by_location_params
-    # result_ids = results.map { |user| user.id }
     @markers = results.map do |user|
       {
         lat: user.geocode[0],
         lng: user.geocode[1],
-        profile_window_html: render_to_string(partial: "profile_window", locals: { user: user })
+        info_window_html: render_to_string(partial: "profile_window", locals: { user: user }),
+        user_id: user.id
       }
     end
     redirect_to controller: 'users', action: 'search_map', markers: @markers, remote: false
