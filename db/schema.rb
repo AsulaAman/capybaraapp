@@ -76,8 +76,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_142830) do
     t.string "address"
     t.string "bio"
     t.string "gender"
-    t.float "latitude"
-    t.float "longitude"
     t.string "nickname"
     t.integer "age"
     t.string "horoscope"
