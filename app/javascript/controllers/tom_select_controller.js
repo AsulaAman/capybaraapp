@@ -6,7 +6,9 @@ export default class extends Controller {
   static values = { options: Object }
 
   connect() {
-    new TomSelect(this.element, this.optionsValue);
-    console.log("tom controller connected")
+    new TomSelect(
+      this.element ,
+      this.optionsValue
+    );
   }
 }
