@@ -1,0 +1,60 @@
+// User profile page
+
+.profile-image {
+  max-width: 200px;
+  margin: 0 auto;
+  img {
+    border-radius: 50%;
+    max-width: 100%;
+  }
+}
+
+.profile-header {
+  margin-top: 30px;
+  h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  h3 {
+    font-size: 18px;
+    margin-top: 5px;
+    color: #bbb;
+  }
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    color: #555;
+  }
+}
+
+.profile-stats {
+  margin-top: 30px;
+  .row {
+    display: flex;
+    justify-content: space-between;
+    p {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.profile-actions {
+  margin-top: 30px;
+  .btn {
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    background-color: #f75c4c;
+    border-color: #f75c4c;
+    &:hover,
+    &:focus {
+      background-color: #dc5343;
+      border-color: #dc5343;
+    }
+  }
+}

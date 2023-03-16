@@ -1,37 +1,6 @@
 
-<div class="container p-5 my-5 bg-light">
-  <div class="card" style="width:100∞">
 
-  <div id="demo" class="carousel slide" data-bs-ride="carousel">
 
-  <!-- Indicators/dots -->
-  <div class="carousel-indicators">
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
-    <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
-  </div>
-
-  <!-- The slideshow/carousel -->
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="https://drifttravel.com/wp-content/uploads/2017/08/Royal_Caribbean_Shay_Mitchell-300x350.jpg" alt="Me" class="d-block" style="width:100%">
-    </div>
-    <div class="carousel-item">
-      <img src="https://media1.popsugar-assets.com/files/thumbor/AhUt8IsCjZ43umtO-REp43X_vDs/fit-in/1024x1024/filters:format_auto-!!-:strip_icc-!!-/2015/07/29/037/n/1922398/4414db452e661b0b_10890676_1526701110935671_1799160418_n/i/When-She-Traveled-Dubai.jpg" alt="Me" class="d-block" style="width:100%">
-    </div>
-    <div class="carousel-item">
-      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTueYEu65ZG54G7mzdVrC8wAaQ_eLlDGZfIxg&usqp=CAU" alt="Me" class="d-block" style="width:100%">
-    </div>
-  </div>
-
-  <!-- Left and right controls/icons -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
-</div>
 
 <div class="card-body">
       <%= @user.address %>
@@ -41,6 +10,72 @@
       <%= @user.gender %>
       <br>
       <%= @user.age %>
+<h1>My Profile</h1>
+
+
+
+    <div id="demo" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="0" class="active"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="1"></button>
+        <button type="button" data-bs-target="#demo" data-bs-slide-to="2"></button>
+      </div>
+
+      <!-- The slideshow/carousel -->
+    <div class="carousel-inner" class="card" style="margin-left: 20%" >
+      <div class="carousel-item active">
+          <img src="https://drifttravel.com/wp-content/uploads/2017/08/Royal_Caribbean_Shay_Mitchell-300x350.jpg" alt="Me"  style="border-radius: 20px;" >
+</div>
+        <div class="carousel-item">
+          <img src="https://drifttravel.com/wp-content/uploads/2017/08/Royal_Caribbean_Shay_Mitchell-300x350.jpg" alt="Me" style="border-radius: 20px;" >
+        </div>
+
+        <div class="carousel-item">
+          <img src="https://drifttravel.com/wp-content/uploads/2017/08/Royal_Caribbean_Shay_Mitchell-300x350.jpg" alt="Me" style="border-radius: 20px;" >
+        </div>
+      </div>
+
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon"></span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+        <span class="carousel-control-next-icon"></span>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+  <div class="p-2 bd-highlight" style="border: 1px;">
+  <div class="card" style="border-radius: 20px; padding: 4px 4px 4px 4px; background-color: #fee6ad; border-color: #fee6ad;">
+    <div class="col-sm-8">
+      <div class="profile-header">
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+          <p>Hi, I’m Noah!
+          Food, dog and beach lover.</p>
+          <p>1/2 hungry, 1/2 sleepy!</p>
+          <p>📍 Shoreditch</p>
+          <p>Favorite things to do:</p>
+          <p>
+            <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px;">Yoga 🧘🏽‍♀️,</span>
+            <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px;">Cycling 🚴🏽‍♀️</span>
+            <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px;">&amp; Painting 🎨</span>
+          </p> %>
+      </div>
+    </div>
+
+    <div class="profile-stats">
+      <div class="row">
+          <p>Connect with me!</p>
+      </div>
+    </div>
+
+    <div class="profile-actions" style="margin-left: 80%" >
+     <%= link_to '<i class="fas fa-comments fa-2x"></i>'.html_safe, edit_user_path(@user) %>
+    </div>
+
   </div>
 </div>
 

@@ -12,12 +12,13 @@ Rails.application.routes.draw do
     post 'filter_users_map', to: 'users#filter_users_map'
     get 'the_results', to: 'users#the_results'
   end
+  resources :users, only: [:index, :show, :new, :create, :edit, :update]
+  get '/users/:id', to: 'users#show', as: 'profile'
+
+  resources :categories, only: [:index, :new]
+
   resources :categories, only: [:index]
   resources :chatrooms, only: [:show] do
     resources :messages, only: [:create]
   end
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
 end
