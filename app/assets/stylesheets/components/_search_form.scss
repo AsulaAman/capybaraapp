@@ -5,9 +5,19 @@
   align-items: center;
   line-height: 32px;
   text-align: center;
+  font-family: $headers-font;
 }
 
 .search-form-btn {
   margin-top: 12px;
   text-align: center;
+}
+
+.form-select {
+  padding: 0;
+  background-color: white;
+}
+
+.form-control {
+  color: white;
 }
