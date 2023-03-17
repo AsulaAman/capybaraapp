@@ -15,7 +15,6 @@ class UsersController < ApplicationController
 
   def search_map
     if params[:markers].present?
-      # markers_as_numbers = params[:markers].map(&:to_i)
       @markers = params[:markers].map do |marker|
         {
           lat: marker[:lat],
@@ -38,10 +37,10 @@ class UsersController < ApplicationController
     gender = params[:user][:gender]
     users_filtered_by_gender_params = gender.present? ? User.where(gender: gender) : User.all
     category = Category.where(name: params[:user][:categories])
-    interests_by_category = Interest.where(category_id: category.ids)
-    interests = interests_by_category.filter { |interest| users_filtered_by_gender_params.ids.include?(interest.user_id)}
+    interests_by_category = Interest.where(category_id: category.pluck(:id))
+    interests = interests_by_category.filter { |interest| users_filtered_by_gender_params.pluck(:id).include?(interest.user_id)}
     users_for_map = interests.map { |interest| User.find(interest.user_id) }
-    users_filtered_by_location_params = User.near(params[:user][:address], 2).to_a
+    users_filtered_by_location_params = User.near(params[:user][:address], 1).to_a
     results = users_for_map & users_filtered_by_location_params
     @markers = results.map do |user|
       {
@@ -55,21 +54,6 @@ class UsersController < ApplicationController
   end
 
   def the_results
-    # users_filtered_by_gender_params = User.where(gender: params[:user][:gender])
-    # category = Category.where(name: params[:user][:categories])
-    # interests_by_category = Interest.where(category_id: category.ids)
-    # interests = interests_by_category.filter { |interest| users_filtered_by_gender_params.ids.include?(interest.user_id)}
-    # @users_for_map = interests.map { |interest| User.find(interest.user_id) }
-    # users_filtered_by_location_params = User.near(params[:address], 2).to_a
-    # results = @users_for_map & users_filtered_by_location_params
-    # # maybe use SQL query to find ILIKE for address from user (so returns all users with that address-ish)
-    # @markers = results.map do |user|
-    #   {
-    #     lat: user.geocode[0],
-    #     lng: user.geocode[1],
-    #     profile_window_html: render_to_string(partial: "profile_window", locals: { user: user })
-      # }
-      @markers
   end
 
   def show

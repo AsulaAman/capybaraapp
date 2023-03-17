@@ -1,15 +1,24 @@
 .search-form{
   color: white;
   padding: 10px 20px;
-  margin-top: 50px;
-  border-radius: 3px;
+  margin: 24px 30px;
+  border-radius: 6px;
   font-size: 18px;
-  margin-bottom: 30px;
-  font-family: $headers-font;
+  font-family: $body-font;
+
+  .form-actions {
+    margin-top: 24px;
+  }
+
   .btn {
     width: 100%;
-    margin-bottom: 20px
+    // border-radius: 20px;
   }
+
+  .btn-primary {
+    margin-bottom: 8px;
+  }
+
 }
 
 .form-select {
@@ -18,14 +27,6 @@
 }
 
 .form-control {
-  color: white;
-}
-
-.form-select {
-  padding: 0;
   background-color: white;
-}
-
-.form-control {
   color: white;
 }
