@@ -19,8 +19,11 @@
     wrapper_html: {class: "flex-grow-1"},
     input_html: {style: "background-color: white;"}
   %>
+    <div class="inline-items">
+      <%=  link_to "Go Back", new_user_session_path, class: "btn btn-primary" %>
+      <%= f.submit "Send", class: "btn btn-primary" %>
 
-  <%= f.submit "Send", class: "btn btn-primary" %>
+    </div>
   </div>
 
 <% end %>
