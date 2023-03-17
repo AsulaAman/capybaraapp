@@ -5,7 +5,7 @@
         <div class="form-inputs">
           <%= f.input :categories,
                       collection: Category.order(:name).map(&:name),
-                      label: 'What to do',
+                      label: "Insterest",
                       prompt: "Select a category (Max 3)",
                       required: false,
                       input_html: { multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true, maxItems: 3}}, class: "form-category-select form-control"} %>
