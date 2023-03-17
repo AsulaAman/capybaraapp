@@ -2,7 +2,7 @@
   data-controller="chatroom-subscription"
   data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
 >
-  <h1><%= Chatroom %></h1>
+  <h1><%= @chatroom.name %></h1>
   <div class="messages" style="height: 1200px" data-chatroom-subscription-target="messages">
     <% @chatroom.messages.each do |message| %>
       <%= render "messages/message", message: message %>
@@ -20,7 +20,7 @@
     input_html: {style: "background-color: white;"}
   %>
     <div class="inline-items">
-      <%=  link_to "Go Back", root_path, class: "btn btn-primary" %>
+      <%=  link_to "Go Back", new_user_session_path, class: "btn btn-primary" %>
       <%= f.submit "Send", class: "btn btn-primary" %>
 
     </div>
