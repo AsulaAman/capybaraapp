@@ -8,7 +8,8 @@ class UsersController < ApplicationController
       {
         lat: user.latitude,
         lng: user.longitude,
-        info_window_html: render_to_string(partial: "profile_window", locals: { user: user})
+        info_window_html: render_to_string(partial: "profile_window", locals: { user: user}),
+        marker_html: render_to_string(partial: "marker")
       }
     end
   end
@@ -19,7 +20,8 @@ class UsersController < ApplicationController
         {
           lat: marker[:lat],
           lng: marker[:lng],
-          info_window_html: render_to_string(partial: "profile_window", locals: { user: User.find(marker[:user_id]) })
+          info_window_html: render_to_string(partial: "profile_window", locals: { user: User.find(marker[:user_id]) }),
+          marker_html: render_to_string(partial: "marker")
         }
       end
     else
@@ -27,7 +29,8 @@ class UsersController < ApplicationController
         {
           lat: user.latitude,
           lng: user.longitude,
-          info_window_html: render_to_string(partial: "profile_window", locals: { user: user })
+          info_window_html: render_to_string(partial: "profile_window", locals: { user: user }),
+          marker_html: render_to_string(partial: "marker")
         }
       end
     end
@@ -47,7 +50,8 @@ class UsersController < ApplicationController
         lat: user.geocode[0],
         lng: user.geocode[1],
         info_window_html: render_to_string(partial: "profile_window", locals: { user: user }),
-        user_id: user.id
+        user_id: user.id,
+        marker_html: render_to_string(partial: "marker")
       }
     end
     redirect_to controller: 'users', action: 'search_map', markers: @markers, remote: false

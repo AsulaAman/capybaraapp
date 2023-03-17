@@ -78,9 +78,14 @@ Interest.create(user_id: User.find(14).id, category_id: Category.find(4).id)
 Interest.create(user_id: User.find(14).id, category_id: Category.first.id)
 Interest.create(user_id: User.find(14).id, category_id: Category.find(3).id)
 User.create(first_name: "Jennifer", last_name: "G", age: 27, address: "2-4 Hoxton Square, London N1 6NU", bio: "I love pilates, yoga and bouldering. I have a sweet tooth and enjoy visiting cafes around the town.", gender: "Female", horoscope: "Pisces", profession: "Software Engineer", email: "jennifer@gmail.com", password: 12345678)
+Interest.create(user_id: User.find(15).id, category_id: Category.first.id)
+Interest.create(user_id: User.find(15).id, category_id: Category.find(4).id)
+Interest.create(user_id: User.find(15).id, category_id: Category.find(3).id)
+User.create(first_name: "Abi", last_name: "K", age: 34, address: "20 New N Rd, London N1 6TG", bio: "Hi everyone! In my free time, I love going out for drinks, dancing and going to the gym.", gender: "Female", horoscope: "Pisces", profession: "Restaurant Manager", email: "abi@gmail.com", password: 12345678)
 Interest.create(user_id: User.last.id, category_id: Category.first.id)
-Interest.create(user_id: User.last.id, category_id: Category.find(4).id)
 Interest.create(user_id: User.last.id, category_id: Category.find(3).id)
+Interest.create(user_id: User.last.id, category_id: Category.find(5).id)
+Interest.create(user_id: User.last.id, category_id: Category.find(6).id)
 
 puts "Creating chatrooms"
 
