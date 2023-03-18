@@ -1,5 +1,5 @@
-<div class="container">
-  <%= image_tag("https://res.cloudinary.com/duufhyqzx/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max,b_rgb:262c35/v1678047757/Capybara%20profile%20picture/stephanie-liverani-Zz5LQe-VSMY-unsplash_vttxk0.jpg", class: "avatar") %>
+<div class="popup-container">
+  <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :fill, class: "avatar" %>
   <div class="user-info-box">
     <h2><%= user.first_name%> <span class="text-muted"><%= user.age %></span></h2>
     <% user.categories.each do |c| %>
@@ -13,5 +13,5 @@
   </div>
 </div>
 <div class="info-action row">
-  <%= link_to "View Profile", user_path(user), class: "btn btn-primary col-8 mx-auto" %>
+  <%= link_to "View Profile", user_path(user), class: "btn popup-btn btn-primary col-8 mx-auto" %>
 </div>
