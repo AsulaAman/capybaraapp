@@ -1,12 +1,10 @@
 .chatroom {
-  background: $peach;
-  margin-top: 9px;
+  background-image: url(https://res.cloudinary.com/dfmu5zwaj/image/upload/v1679136242/blurry-gradient-haikei_divpaz.png);
   height: calc(100vh - 75px);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   flex-grow: 1;
-  border-radius: 3%;
 
   h1 {
     border-bottom: 1px solid;
@@ -23,10 +21,16 @@
   #new_message {
     border-top: 1px solid;
     padding: 1rem;
+    flex-direction: column;
+    align-items: end;
 
     .form-group {
       margin-bottom: 0;
     }
+  }
+
+  .message_content {
+    width: 100%;
   }
 
   .msg-colour {
@@ -35,24 +39,28 @@
 
   .text-right {
     text-align: right;
-    // position: relative;
-    padding-right: 50px;
+    padding-left: 3%;
     margin-bottom: 10px;
-    background: #EEE;
-    padding-right: 50px;
-    border-radius: 3%;
-
-  }
+    background-color: rgb(90, 130, 120);
+    color: white;
+    width: fit-content;
+    box-shadow: 0 8px 6px -6px black;
+    margin-left: 40%;
+    padding-right: 11%;
+    }
 
   .text-left {
     text-align: left;
     // position: relative;
-    padding-left: 50px;
+    padding-left: 20px;
     margin-bottom: 10px;
-    background-color: black;
+    background-color: rgb(75, 120, 134);
     color: white;
     width: fit-content;
-    padding-right: 50px;
-    border-radius: 3%;
+    padding-right: 40px;
+    box-shadow: 0 8px 6px -6px black;
+
   }
+
+
 }
