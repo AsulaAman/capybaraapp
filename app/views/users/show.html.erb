@@ -1,5 +1,3 @@
-
-
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
       <!-- Indicators/dots -->
       <div class="carousel-indicators">
@@ -62,8 +60,9 @@
 </div>
 </div>
 
-<div class="icon-bar">
-  <%= link_to ('<i class="fa fa-home"></i>').html_safe, root_path %>
-  <%= link_to ('<i class="fa fa-heart"></i>').html_safe, user_path(@user) %>
-  <%= link_to ('<i class="fa fa-envelope"></i>').html_safe, user_path(@user) %>
-  <%= link_to ('<i class="fa fa-search"></i>').html_safe, user_path(@user) %>
+  <div class="icon-bar">
+    <%= link_to ('<i class="fa fa-home"></i>').html_safe, root_path %>
+    <%= link_to ('<i class="fa fa-heart"></i>').html_safe, toggle_favorite_user_path %>
+    <%= link_to ('<i class="fa fa-envelope"></i>').html_safe, chatroom_path %>
+    <%= link_to ('<i class="fa fa-search"></i>').html_safe, new_user_session_path %>
+  </div>
