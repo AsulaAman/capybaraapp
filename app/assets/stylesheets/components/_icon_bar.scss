@@ -1,0 +1,37 @@
+// .icon-bar {
+//   width: 100%;
+//   background-color: #FFD3B1;
+//   overflow: auto;
+// }
+
+// .icon-bar a {
+//   float: left;
+//   width: 33.3%;
+//   text-align: center;
+//   padding: 20px 15;
+//   transition: all 0.3s ease;
+//   font-size: 45px;
+// }
+
+body {margin:0;}
+
+.icon-bar {
+  width: 100%;
+  background-color: #FFD3B1;
+  overflow: auto;
+  border-radius: 5px;
+  padding: 5px 5px 5px 5px;
+}
+
+.icon-bar a {
+  float: left;
+  width: 25%;
+  text-align: center;
+  padding: 12px 0;
+  transition: all 0.3s ease;
+  font-size: 36px;
+}
+
+.icon-bar a:hover {
+  background-color: #FFD3B1;
+}

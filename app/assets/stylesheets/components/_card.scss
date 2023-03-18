@@ -12,3 +12,13 @@
   border-radius: 50%;
   padding: 30px;
 }
+.card {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  border: none;
+}
+
+.pb {
+ padding-bottom: 20px;
+}
