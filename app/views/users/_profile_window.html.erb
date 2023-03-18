@@ -1,4 +1,4 @@
-<div class="container">
+<div class="popup-container">
   <%= cl_image_tag user.photo.key, height: 300, width: 400, crop: :fill, class: "avatar" %>
   <div class="user-info-box">
     <h2><%= user.first_name%> <span class="text-muted"><%= user.age %></span></h2>
@@ -13,5 +13,5 @@
   </div>
 </div>
 <div class="info-action row">
-  <%= link_to "View Profile", user_path(user), class: "btn btn-primary col-8 mx-auto" %>
+  <%= link_to "View Profile", user_path(user), class: "btn popup-btn btn-primary col-8 mx-auto" %>
 </div>

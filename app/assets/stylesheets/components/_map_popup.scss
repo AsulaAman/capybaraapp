@@ -1,12 +1,12 @@
 .mapboxgl-popup div {
   max-width: 400px;
   border-radius: 8px;
-  .container {
+  .popup-container {
     display: flex;
     padding-bottom: 0px;
   }
 
-  .btn {
+  .popup-btn {
     margin-top: 16px;
     background-color: $peach;
     border-color: $peach;
