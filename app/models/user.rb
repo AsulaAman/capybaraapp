@@ -11,14 +11,12 @@ class User < ApplicationRecord
   validates :age, presence: true
   validates :bio, presence: true
   validates :gender, presence: true
-
-
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
   has_many :interests
   has_many :categories, through: :interests
-  geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
   has_many :messages
+  geocoded_by :address
+  after_validation :geocode, if: ->(obj) { obj.address.present? and obj.address_changed? }
 end
