@@ -1,19 +1,5 @@
 
 
-
-
-<div class="card-body">
-      <%= @user.address %>
-      <br>
-      <%= @user.bio %>
-      <br>
-      <%= @user.gender %>
-      <br>
-      <%= @user.age %>
-<h1>My Profile</h1>
-
-
-
     <div id="demo" class="carousel slide" data-bs-ride="carousel">
       <!-- Indicators/dots -->
       <div class="carousel-indicators">
@@ -23,16 +9,16 @@
       </div>
 
       <!-- The slideshow/carousel -->
-    <div class="carousel-inner" class="card" style="margin-left: 20%" >
+    <div class="carousel-inner" class="card" style="margin-left: 10%; padding: 4px 4px 4px 4px; width:  500px; height: 500px;">
       <div class="carousel-item active">
-          <img src="https://drifttravel.com/wp-content/uploads/2017/08/Royal_Caribbean_Shay_Mitchell-300x350.jpg" alt="Me"  style="border-radius: 20px;" >
-</div>
+          <img src="https://drifttravel.com/wp-content/uploads/2017/08/Royal_Caribbean_Shay_Mitchell-300x350.jpg" alt="Me" style="border-radius: 5px; object-fit: cover; width:  300px; height: 500px;" >
+    </div>
         <div class="carousel-item">
-          <img src="https://drifttravel.com/wp-content/uploads/2017/08/Royal_Caribbean_Shay_Mitchell-300x350.jpg" alt="Me" style="border-radius: 20px;" >
+          <img src="https://media.glamour.com/photos/5704338973eb5f7a37a3900d/master/w_1600,c_limit/weddings-2016-03-11-v-shay-mitchell-vacation-pictures-0314-courtesy-shay-mitchell-main.jpg" alt="Me" style="border-radius: 5px; object-fit: cover; width:  300px; height: 500px;" >
         </div>
 
         <div class="carousel-item">
-          <img src="https://drifttravel.com/wp-content/uploads/2017/08/Royal_Caribbean_Shay_Mitchell-300x350.jpg" alt="Me" style="border-radius: 20px;" >
+          <img src="https://www.royalcaribbean.com/connect/wp-content/uploads/2017/10/Shay-On-A-Ship-High-Res.jpg" alt="Me" style="border-radius: 5px; object-fit: cover; width:  300px; height: 500px;" >
         </div>
       </div>
 
@@ -44,70 +30,40 @@
         <span class="carousel-control-next-icon"></span>
       </button>
     </div>
-  </div>
-</div>
 
 
   <div class="p-2 bd-highlight" style="border: 1px;">
-  <div class="card" style="border-radius: 20px; padding: 4px 4px 4px 4px; background-color: #fee6ad; border-color: #fee6ad;">
+  <div class="card" style="border-radius: 5px; padding: 4px 4px 4px 4px; width:  375px; height: 400px; background-color: #FFD3B1; border-color: #FFD3B1;">
     <div class="col-sm-8">
       <div class="profile-header">
         <h1><%= @user.first_name %> <%= @user.last_name %></h1>
-          <p>Hi, I’m Noah!
-          Food, dog and beach lover.</p>
-          <p>1/2 hungry, 1/2 sleepy!</p>
-          <p>📍 Shoreditch</p>
+      <div class="card-body">
+      <p>📍</p> <%= @user.address %>
+      <br>
+      <%= @user.bio %>
+      <br>
+      <%= @user.gender %>
+      <br>
+      <%= @user.age %>
           <p>Favorite things to do:</p>
           <p>
-            <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px;">Yoga 🧘🏽‍♀️,</span>
-            <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px;">Cycling 🚴🏽‍♀️</span>
-            <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px;">&amp; Painting 🎨</span>
-          </p> %>
+            <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px; float: left;
+                         width: 33%; text-align: center;">Yoga 🧘🏽‍♀️,</span>
+            <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px; float: left;
+                         width: 33%; text-align: center;">Cycling 🚴🏽‍♀️</span>
+            <span style="border: 2px solid #FF8C00; background-color: #f4ac54; padding: 5px; float: left;
+                         width: 33%; text-align: center;">&amp; Painting 🎨</span>
       </div>
     </div>
 
-    <div class="profile-stats">
-      <div class="row">
-          <p>Connect with me!</p>
-      </div>
     </div>
-
-    <div class="profile-actions" style="margin-left: 80%" >
-     <%= link_to '<i class="fas fa-comments fa-2x"></i>'.html_safe, edit_user_path(@user) %>
     </div>
-
   </div>
+</div>
 </div>
 
 <div class="icon-bar">
-  <a href="#"><i class="fa-solid fa-user"></i></a>
-  <a href="#"><i class="fa-solid fa-heart"></i></a>
-  <a href="#"><i class="fa-solid fa-envelope"></i></a>
-  <a href="#"><i class="fa-sharp fa-solid fa-magnifying-glass"></i></a>
-</div>
-</div>
-
-<style>
-body {margin:0;}
-
-.icon-bar {
-  width: 100%;
-  background-color: #FFD3B1;
-  overflow: auto;
-}
-
-.icon-bar a {
-  float: left;
-  width: 25%;
-  text-align: center;
-  padding: 20px 15;
-  transition: all 0.3s ease;
-  color: white;
-  font-size: 36px;
-}
-
-.icon-bar a:hover {
-  background-color: #12425b;
-}
-</style>
-<body>
+  <%= link_to ('<i class="fa fa-home"></i>').html_safe, root_path %>
+  <%= link_to ('<i class="fa fa-heart"></i>').html_safe, user_path(@user) %>
+  <%= link_to ('<i class="fa fa-envelope"></i>').html_safe, user_path(@user) %>
+  <%= link_to ('<i class="fa fa-search"></i>').html_safe, user_path(@user) %>
