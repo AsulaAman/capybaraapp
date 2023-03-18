@@ -65,6 +65,12 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
+    @resource = @user
+  end
+
+  def update
+    @user = User.find(params[:id])
   end
 
   def toggle_favorite

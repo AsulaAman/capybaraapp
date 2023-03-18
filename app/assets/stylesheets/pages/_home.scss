@@ -1,16 +1,76 @@
 // Specific CSS for your home-page
-.home-title {
-  font-size: 36px;
-  font-weight: 900;
-  margin: auto;
-  margin-top: 350px;
-  text-align: center;
-  font-family: $headers-font;
-  color: $peach;
-}
+// body {background-color: coral;}
+// h1 {
+//   text-align: center;
+//   color: navy
+// }
+// p {
+//   text-align: center;
 
 p {
   font-family: $headers-font;
   font-size: 20px;
   font-weight: 500;
+}
+
+// img {
+//   width: 100%;
+//   height: 200%;
+// }
+
+
+.space {
+  aspect-ratio: 900/450;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.layer1 {
+  background-image: url("./waves.png");
+}
+
+.wrapper {
+  position: relative;
+  padding: 0;
+}
+
+
+
+.home_button {
+  position: absolute;
+  text-decoration: none;
+  top: 50%;
+  left: 50%;
+  width: 170px;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  padding: 12px 24px;
+  border: none;
+  cursor: pointer;
+  border-radius: 20px;
+  text-align: bottom;
+  outline: none;
+  margin-top: 70%;
+}
+
+.container .btn:hover {
+  background-color: darkslategrey;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#logo {
+  position: absolute;
+  left: 25px;
+  top: 180px;
+  width: 350px;
+  height: 350px;
 }
