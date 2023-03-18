@@ -7,7 +7,7 @@ export default class extends Controller {
 
   connect() {
     new TomSelect(
-      this.element ,
+      this.element,
       this.optionsValue
     );
   }
