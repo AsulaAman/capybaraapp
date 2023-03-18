@@ -1,16 +1,24 @@
-.search-form {
-  color: $white;
-  list-style-type: none;
-  margin: 70px;
-  align-items: center;
-  line-height: 32px;
-  text-align: center;
-  font-family: $headers-font;
-}
+.search-form{
+  color: white;
+  padding: 10px 20px;
+  margin: 24px 30px;
+  border-radius: 6px;
+  font-size: 18px;
+  font-family: $body-font;
 
-.search-form-btn {
-  margin-top: 12px;
-  text-align: center;
+  .form-actions {
+    margin-top: 24px;
+  }
+
+  .btn {
+    width: 100%;
+    // border-radius: 20px;
+  }
+
+  .btn-primary {
+    margin-bottom: 8px;
+  }
+
 }
 
 .form-select {
@@ -19,5 +27,6 @@
 }
 
 .form-control {
+  background-color: white;
   color: white;
 }

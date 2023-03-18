@@ -3,18 +3,20 @@
     <div class="col-12 col-sm-4">
       <%= simple_form_for :user, url: user_filter_users_map_path do |f| %>
         <div class="form-inputs">
-          <%= f.input :categories, collection: Category.order(:name),
+          <%= f.input :categories,
+                      collection: Category.order(:name).map(&:name),
                       label: 'What to do',
                       prompt: "Select a category (Max 3)",
                       required: false,
                       input_html: { multiple: true, data: {controller: "tom-select", tom_select_options_value: {tags: true, maxItems: 3}}, class: "form-category-select form-control"} %>
-          <%= f.input :gender, collection: ['Women', 'Men'], label: 'Looking for', required: false,
+          <%= f.input :gender, collection: ['Female', 'Male'], label: 'Looking for', required: false,
                       prompt: 'Gender',
                       input_html: { data: {controller: "tom-select", tom_select_options_value: {tags: true}}, class: "form-category-select form-control"} %>
-          <%= f.input :address, placeholder: "District e.g. Hackney", label: "Meetup Location", required: false  %>
+          <%= f.input :address, placeholder: "District e.g. Hackney", label: "Meetup Location", required: true  %>
         </div>
         <div class="form-actions">
           <%= f.submit "Search", class: "btn btn-primary mx-auto" %>
+          <%= link_to "Clear Filter", user_search_map_path, class: "btn btn-alert border-light text-light mx-auto"%>
         </div>
       <% end %>
     </div>
