@@ -73,4 +73,10 @@ class UsersController < ApplicationController
     @favorite_users = current_user.favorited_by_type('User')
     @favoritors = current_user.favoritors_by_type('User')
   end
+
+  # private
+
+  # def user_params
+  #   params.require(:user).permit(:first_name, :last_name, :age, :address, :bio, :gender, :horoscope, :profession, :email, :password, :photo)
+  # end
 end
