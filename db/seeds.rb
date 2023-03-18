@@ -98,7 +98,7 @@ user.save
 Interest.create(user_id: User.find(9).id, category_id: Category.first.id)
 Interest.create(user_id: User.find(9).id, category_id: Category.find(4).id)
 
-file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679143033/guilherme-stecanella-_dH-oQF9w-Y-unsplash_kngw6w.jpg")
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679149381/ghows-WV-2215a1db-bd4c-5157-e053-0100007f4126-5cd4fde6_1_x5zosu.png")
 user = User.new(first_name: "Rachel", last_name: "S", age: 29, address: "Pitfield St, London N1 6NP", bio: "I enjoy reading, hiking, and traveling to new places.", gender: "Female", horoscope: "Taurus", profession: "Teacher", email: "rachel@gmail.com", password: 12345678)
 user.photo.attach(io: file, filename: "mia.jpg", content_type: "image/jpg")
 user.save
