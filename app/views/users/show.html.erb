@@ -34,7 +34,7 @@
   <div class="card" style="border-radius: 5px; padding: 4px 4px 4px 4px; width:  375px; height: 400px; background-color: #FFD3B1; border-color: #FFD3B1;">
     <div class="col-sm-8">
       <div class="profile-header">
-        <h1><%= @user.first_name %> <%= @user.last_name %></h1>
+        <h1><%= @user.first_name %> <%= @user.last_name %></h1><span><%= render "like_button" %></span>
       <div class="card-body">
       <p>📍</p> <%= @user.address %>
       <br>

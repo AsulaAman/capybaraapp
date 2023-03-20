@@ -1,7 +1,7 @@
 <h3 class="favorite-header mt-3 mx-4 mb-3">Who Likes You</h1>
   <% @favoritors.each do |u| %>
     <div class="favorite-users">
-      <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+      <%= cl_image_tag u.photo.key, height: 56, width: 56, crop: :thumb, gravity: :face, class: "avatar-large" %>
         <div class="favorite-content">
           <p id="favorite-title"><strong><%= u.first_name %></strong>, <small><%= u.age %></small></p>
           <p><%= u.profession %></p>
@@ -19,7 +19,7 @@
 <h3 class="favorite-header mt-3 mx-4 mb-3">Your Likes</h1>
   <% @favorite_users.each do |u| %>
     <div class="favorite-users">
-      <img class="avatar-large" alt="avatar-large" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" />
+      <%= cl_image_tag u.photo.key, height: 56, width: 56, crop: :thumb, gravity: :face, class: "avatar-large" %>
         <div class="favorite-content">
           <p id="favorite-title"><strong><%= u.first_name %></strong>, <small><%= u.age %></small></p>
           <p><%= u.profession %></p>
