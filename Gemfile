@@ -27,6 +27,8 @@ gem "stimulus-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
+gem 'database_cleaner-active_record'
+
 gem "devise"
 
 gem 'acts_as_favoritor', github: 'jonhue/acts_as_favoritor'
