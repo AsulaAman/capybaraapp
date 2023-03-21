@@ -105,6 +105,10 @@ GEM
       rest-client (>= 2.0.0)
     concurrent-ruby (1.2.2)
     crass (1.0.6)
+    database_cleaner-active_record (2.1.0)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     date (3.3.3)
     debug (1.7.1)
       irb (>= 1.5.0)
@@ -278,6 +282,7 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  arm64-darwin-22
   x86_64-linux
 
 DEPENDENCIES
@@ -286,6 +291,7 @@ DEPENDENCIES
   bootsnap
   capybara
   cloudinary
+  database_cleaner-active_record
   debug
   devise
   dotenv-rails

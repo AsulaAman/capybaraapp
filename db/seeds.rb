@@ -6,6 +6,12 @@
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
 
+puts "Cleaning database..."
+require 'database_cleaner/active_record'
+
+DatabaseCleaner.strategy = :truncation
+DatabaseCleaner.clean
+
 puts "Creating database..."
 
 puts "Creating categories..."
@@ -32,6 +38,7 @@ file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679135526/m
 user = User.new(first_name: "Noah", last_name: "J", age: 36, address: "134B Kingsland Rd, London E2 8DY", bio: "I have worked on some of the most iconic ad campaigns of the past decade. I am also an avid collector of vintage vinyl records and enjoy going to live music shows.", gender: "Male", horoscope: "Cancer", profession:"Creative Director", email: "noah@gmail.com", password: 12345678)
 user.photo.attach(io: file, filename: "noah.jpg", content_type: "image/jpg")
 user.save
+
 Interest.create(user_id: User.first.id, category_id: Category.first.id)
 Interest.create(user_id: User.first.id, category_id: Category.find(9).id)
 Interest.create(user_id: User.first.id, category_id: Category.second.id)
