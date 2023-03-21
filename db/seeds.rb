@@ -28,7 +28,7 @@ puts "Creating users..."
 
 require "open-uri"
 
-file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679218803/marc-kleen-Iskck0kl210-unsplash_gq0zf2.jpg")
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679135526/marc-kleen-Iskck0kl210-unsplash_gq0zf2.jpg")
 user = User.new(first_name: "Noah", last_name: "J", age: 36, address: "134B Kingsland Rd, London E2 8DY", bio: "I have worked on some of the most iconic ad campaigns of the past decade. I am also an avid collector of vintage vinyl records and enjoy going to live music shows.", gender: "Male", horoscope: "Cancer", profession:"Creative Director", email: "noah@gmail.com", password: 12345678)
 user.photo.attach(io: file, filename: "noah.jpg", content_type: "image/jpg")
 user.save
@@ -105,7 +105,7 @@ user.save
 Interest.create(user_id: User.find(10).id, category_id: Category.first.id)
 Interest.create(user_id: User.find(10).id, category_id: Category.find(4).id)
 
-file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679327556/development/dw275yig7ll6cebjgrobn6wpiu6v.jpg")
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679143033/guilherme-stecanella-_dH-oQF9w-Y-unsplash_kngw6w.jpg")
 user = User.new(first_name: "Emma", last_name: "J", age: 28, address: "66 Buttesland St, London N1 6BY", bio: "In my free time, I enjoy hiking, painting, and trying new foods.", gender: "Female", horoscope: "Saggitarius", profession: "Nurse", email: "emma@gmail.com", password: 12345678)
 user.photo.attach(io: file, filename: "emma.jpg", content_type: "image/jpg")
 user.save
@@ -113,7 +113,7 @@ Interest.create(user_id: User.find(11).id, category_id: Category.first.id)
 Interest.create(user_id: User.find(11).id, category_id: Category.find(3).id)
 Interest.create(user_id: User.find(11).id, category_id: Category.find(4).id)
 
-file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/ar_1:1,b_rgb:262c35,bo_5px_solid_rgb:ffffff,c_fill,g_auto,r_max,w_1000/v1679134861/freestocks-9UVmlIb0wJU-unsplash_xpblmn.jpg")
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679134861/freestocks-9UVmlIb0wJU-unsplash_xpblmn.jpg")
 user = User.new(first_name: "Sarah", last_name: "W", age: 25, address: "7 Boundary St, London E2 7JE", bio: "Hi, I just moved to the city and I work as a product designer. In my free time, I enjoy reading and practicing yoga.", gender: "Female", horoscope: "Leo", profession: "Product Designer", email: "sarah@gmail.com", password: 12345678)
 user.photo.attach(io: file, filename: "sarah.jpg", content_type: "image/jpg")
 user.save
@@ -121,8 +121,8 @@ Interest.create(user_id: User.find(12).id, category_id: Category.first.id)
 Interest.create(user_id: User.find(12).id, category_id: Category.find(9).id)
 Interest.create(user_id: User.find(12).id, category_id: Category.find(4).id)
 
-file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679344053/elvis-ray-jroWnlSzLuc-unsplash_nimwye.jpg")
-user = User.new(first_name: "Helen", last_name: "W", age: 25, address: "16 Kingsland Rd, London E2 8DA", bio: "Hi, I work in social media marketing and I have helped launch several successful campaigns. In my free time, I enjoy reading and practicing yoga.", gender: "Female", horoscope: "Leo", profession: "Marketing Manager", email: "helen@gmail.com", password: 12345678)
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679134970/ronny-sison-BnS-h6wEwNA-unsplash_hmrjwc.jpg")
+user = User.new(first_name: "Helen", last_name: "W", age: 25, address: "16 Kingsland Rd, London E2 8DA", bio: "Hi, I work as a marketing manager and I have helped launch several successful campaigns. In my free time, I enjoy reading and practicing yoga.", gender: "Female", horoscope: "Leo", profession: "Marketing Manager", email: "helen@gmail.com", password: 12345678)
 user.photo.attach(io: file, filename: "helen.jpg", content_type: "image/jpg")
 user.save
 Interest.create(user_id: User.find(13).id, category_id: Category.find(8).id)
@@ -144,12 +144,13 @@ Interest.create(user_id: User.find(15).id, category_id: Category.first.id)
 Interest.create(user_id: User.find(15).id, category_id: Category.find(4).id)
 Interest.create(user_id: User.find(15).id, category_id: Category.find(3).id)
 
-file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679327568/development/jgszdb3h43e04gubfgwx0t6x6akh.jpg")
-user = User.new(first_name: "Abi", last_name: "K", age: 34, address: "20 New N Rd, London N1 6TG", bio: "Hi everyone! In my free time, I love going out for drinks, photography, dancing and going to the gym.", gender: "Female", horoscope: "Pisces", profession: "Restaurant Manager", email: "abi@gmail.com", password: 12345678)
+file = URI.open("https://res.cloudinary.com/duufhyqzx/image/upload/v1679143718/kinga-howard-HHw9lc0ogIs-unsplash_zche9o.jpg")
+user = User.new(first_name: "Abi", last_name: "K", age: 34, address: "20 New N Rd, London N1 6TG", bio: "Hi everyone! In my free time, I love going out for drinks, dancing and going to the gym.", gender: "Female", horoscope: "Pisces", profession: "Restaurant Manager", email: "abi@gmail.com", password: 12345678)
 user.photo.attach(io: file, filename: "abi.jpg", content_type: "image/jpg")
 user.save
 Interest.create(user_id: User.last.id, category_id: Category.first.id)
 Interest.create(user_id: User.last.id, category_id: Category.find(3).id)
+Interest.create(user_id: User.last.id, category_id: Category.find(5).id)
 Interest.create(user_id: User.last.id, category_id: Category.find(6).id)
 
 puts "Creating chatrooms"
