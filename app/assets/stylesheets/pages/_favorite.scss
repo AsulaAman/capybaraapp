@@ -4,7 +4,7 @@
   margin-bottom: 16px;
   margin-left: 24px;
   margin-right: 24px;
-  background: #175170c2;
+  background: #12415bab;
   padding: 8px 16px;
   border-radius: 12px;
 }
@@ -19,7 +19,7 @@
   margin: 0;
   line-height: 1.4;
   font-size: 14px;
-  font-family: 'Poppins', sans-serif;
+  font-family: $body-font;
   font-weight: thin;
 }
 
@@ -35,6 +35,7 @@
 
 .favorite-header {
   color: white;
+  font-family: $headers-font;
 }
 
 .favorite-content .btn {
@@ -53,16 +54,14 @@
 }
 
 .btn-flat {
-  color: white;
   padding: 8px 18px;
   border-radius: 4px;
   background: $purple;
-  transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #803e9c;
-  color: white;
+  background-color: #572a6b;
+  transition: background 0.7s ease;
 }
 
 .fa-magnifying-glass {

@@ -1,5 +1,5 @@
 body {
-  background-image: url("https://res.cloudinary.com/dfmu5zwaj/image/upload/v1679136242/blurry-gradient-haikei_divpaz.png");
+  background-image: url("https://res.cloudinary.com/duufhyqzx/image/upload/v1679159442/blurry-gradient-haikei_xerl7v.png");
   background-repeat: no-repeat;
   height: 100%;
 }
@@ -35,4 +35,17 @@ body {
 .form-control {
   background-color: white;
   color: white;
+}
+
+.form-actions a {
+  width: 100%;
+}
+
+.mapboxgl-ctrl-geocoder .mapboxgl-ctrl {
+  max-width: none;
+  width: 100%;
+  height: 36px;
+  border: 1px solid lightgrey;
+  box-shadow: none;
+  background-color: white;
 }
