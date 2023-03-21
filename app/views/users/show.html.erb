@@ -63,6 +63,6 @@
   <div class="icon-bar">
     <%= link_to ('<i class="fa fa-home"></i>').html_safe, root_path %>
     <%= link_to ('<i class="fa fa-heart"></i>').html_safe, toggle_favorite_user_path %>
-    <%= link_to ('<i class="fa fa-envelope"></i>').html_safe, chatroom_path %>
+    <%= link_to ('<i class="fa fa-envelope"></i>').html_safe, chatroom_path(@user) %>
     <%= link_to ('<i class="fa fa-search"></i>').html_safe, new_user_session_path %>
   </div>
